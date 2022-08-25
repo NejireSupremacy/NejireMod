@@ -5,8 +5,8 @@ const commandList = {
 export default {
     name: 'interactionCreate',
     when: 'on',
-    execute(interaction) {
-        interaction.deferReply();
+    async execute(interaction) {
+        await interaction.deferReply();
 
         const { commandName } = interaction;
         const { execute } = commandList[commandName].default;
