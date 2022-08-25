@@ -1,5 +1,6 @@
 const eventList = {
-    ready: await import('./events/ready.js')
+    ready: await import('./events/ready.js'),
+    interactionCreate: await import('./events/interactionCreate.js')
 }
 
 const eventListKeys = Object.keys(eventList);
