@@ -1,6 +1,4 @@
-const commandList = {
-    ping: await import('../commands/ping.js')
-}
+import { commandList } from '../utils/commandList.js';
 
 export default {
     name: 'interactionCreate',
