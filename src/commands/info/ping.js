@@ -11,7 +11,6 @@ export default {
         const startTime = interaction.createdTimestamp;
         const endTime = response.createdTimestamp;
 
-        console.log(startTime, endTime);
         const msgLatency = endTime - startTime;
 
         await response.edit({
