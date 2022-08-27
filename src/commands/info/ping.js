@@ -5,7 +5,17 @@ const data = {
 
 export default {
     data,
-    execute(interaction) {
-        interaction.sendFollowUp({ content: 'Pong!' });
+    async execute(interaction) {
+        const response = await interaction.sendFollowUp({ content: '🏓 Pong!' });
+
+        const startTime = interaction.createdTimestamp;
+        const endTime = response.createdTimestamp;
+
+        console.log(startTime, endTime);
+        const msgLatency = endTime - startTime;
+
+        await response.edit({
+            content: `🏓 Pong! \n> **My message latency is ${msgLatency} ms**`
+        })
     }
 }
