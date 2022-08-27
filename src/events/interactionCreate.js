@@ -4,7 +4,7 @@ export default {
     name: 'interactionCreate',
     when: 'on',
     async execute(interaction) {
-        await interaction.deferReply();
+        await interaction.defer();
 
         const { commandName } = interaction;
         const { execute } = commandList[commandName].default;
@@ -12,7 +12,7 @@ export default {
         try {
             execute(interaction);
         } catch (e) {
-            interaction.followUp(`There was an error! \n${e.name}: ${e.message}`);
+            interaction.sendFollowUp({ content: `There was an error! \n${e.name}: ${e.message}` });
             console.error(e);
         }
     }

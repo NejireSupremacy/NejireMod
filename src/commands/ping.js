@@ -7,6 +7,6 @@ export default {
     name: 'ping',
     data,
     execute(interaction) {
-        interaction.followUp('pong');
+        interaction.sendFollowUp({ content: 'Pong!' });
     }
 }
