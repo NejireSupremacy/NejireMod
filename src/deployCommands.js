@@ -25,5 +25,4 @@ for (const command of commandListKeys) {
 
     const data = await response.json();
     console.log(data);
-
 })()

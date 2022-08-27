@@ -4,7 +4,6 @@ const data = {
 }
 
 export default {
-    name: 'ping',
     data,
     execute(interaction) {
         interaction.sendFollowUp({ content: 'Pong!' });
