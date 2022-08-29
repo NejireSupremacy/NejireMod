@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+
+    "module": "es2022",
+    "rootDir": "./src",
+    "moduleResolution": "node",
+
+    "outDir": "./out",
+
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "strict": true,
+    "suppressImplicitAnyIndexErrors": true,
+
+    "skipLibCheck": true
+  }
+}

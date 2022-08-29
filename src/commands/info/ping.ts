@@ -1,11 +1,14 @@
+import { CommandInteraction } from "@biscuitland/core";
+import { Command } from "../../utils/interfaces";
+
 const data = {
-    "name": "ping",
-    "description": "Get the bot latency"
+    name: 'ping',
+    description: 'Get the bot latency'
 }
 
-export default {
-    data,
-    async execute(interaction) {
+export class PingCommand implements Command {
+    data = data
+    async execute(interaction: CommandInteraction) {
         const response = await interaction.sendFollowUp({ content: '🏓 Pong!' });
 
         const startTime = interaction.createdTimestamp;

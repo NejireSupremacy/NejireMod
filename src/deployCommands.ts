@@ -6,7 +6,7 @@ const commandListKeys = Object.keys(commandList);
 const commandArray = [];
 
 for (const command of commandListKeys) {
-    const { data } = commandList[command].default;
+    const { data } = commandList[command];
 
     commandArray.push(data);
 }

@@ -1,7 +1,9 @@
+import { Ready } from "@biscuitland/core";
+
 export default {
     name: 'ready',
     when: 'once',
-    execute(client) {
+    async execute(client: Ready) {
         console.log(`Logged in as ${client.user.username}`);
     }
 }
