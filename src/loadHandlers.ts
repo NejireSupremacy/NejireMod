@@ -1,16 +1,17 @@
-import { EventAdapter } from '@biscuitland/core';
+import { EventAdapter } from "@biscuitland/core";
+import { Event } from "./utils/interfaces";
 
-const eventList = {
-    ready: await import('./events/ready.js'),
-    interactionCreate: await import('./events/interactionCreate.js')
-}
-
-const eventListKeys: string[] = Object.keys(eventList);
+const eventList: Record<string, Event> = {
+  ready: (await import("./events/ready").then((x) => x.default)) as Event,
+  interaction: (await import("./events/interactionCreate").then(
+    (x) => x.default
+  )) as Event,
+};
 
 export const eventsListener = ({ events }: { events: EventAdapter }) => {
-    for (const event of eventListKeys) {
-        const { name, when, execute } = eventList[event].default;
+  for (const event of Object.values(eventList)) {
+    const { name, when, execute } = event;
 
-        events[when](name, (...args: any[]) => execute(...args));
-    }
-}
+    events[when](name, (...args: any[]) => execute(...args));
+  }
+};

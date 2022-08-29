@@ -1,8 +1,15 @@
 {
+  "name": "nejire-mod",
+  "description": "Just a moderation Discord bot optimized for your server",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "dev": "tsc-watch --onSuccess \"node --no-warnings dist/index.js\""
+  },
   "type": "module",
   "dependencies": {
     "@biscuitland/core": "^2.0.4",
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "tsc-watch": "^5.0.3"
   },
   "devDependencies": {
     "@types/node": "^18.7.13"
