@@ -16,7 +16,6 @@
     "sourceMap": false,
     "strict": true,
     
-
     /* Type Checking */
     "skipLibCheck": true,
 		"noImplicitAny": true,
