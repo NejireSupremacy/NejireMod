@@ -3,7 +3,7 @@
   "description": "Just a moderation Discord bot optimized for your server",
   "scripts": {
     "build": "tsc --project tsconfig.json",
-    "dev": "tsc-watch --onSuccess \"node --no-warnings dist/index.js\""
+    "dev": "tsc-watch --onSuccess \"node --no-warnings --experimental-specifier-resolution=node out/index.js\""
   },
   "type": "module",
   "dependencies": {
