@@ -19,7 +19,7 @@ export class InteractionCreateEvent implements Event {
             else await interaction.defer();
 
             try {
-                execute(interaction);
+                await execute(interaction);
             } catch (e) {
                 if (e instanceof Error) {
                     interaction.sendFollowUp({
