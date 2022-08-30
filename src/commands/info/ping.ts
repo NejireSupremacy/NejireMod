@@ -8,6 +8,7 @@ const data = {
 
 export class PingCommand implements Command {
     data = data;
+    needEphemeral = false;
     async execute(interaction: CommandInteraction) {
         const response = await interaction.sendFollowUp({ content: '🏓 Pong!' });
 

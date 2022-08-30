@@ -2,6 +2,7 @@ import { AllEvents, CreateApplicationCommands } from '@biscuitland/core';
 
 export interface Command {
     data: CreateApplicationCommands;
+    needEphemeral: boolean;
     execute(...args: any[]): Promise<void>;
 }
 
