@@ -1,13 +1,13 @@
-import { CommandInteraction } from "@biscuitland/core";
-import { Command } from "../../utils/interfaces.js";
+import { CommandInteraction } from '@biscuitland/core';
+import { Command } from '../../utils/interfaces.js';
 
 const data = {
     name: 'ping',
     description: 'Get the bot latency'
-}
+};
 
 export class PingCommand implements Command {
-    data = data
+    data = data;
     async execute(interaction: CommandInteraction) {
         const response = await interaction.sendFollowUp({ content: '🏓 Pong!' });
 
@@ -18,6 +18,6 @@ export class PingCommand implements Command {
 
         await response.edit({
             content: `🏓 Pong! \n> **My message latency is ${msgLatency} ms**`
-        })
+        });
     }
 }
