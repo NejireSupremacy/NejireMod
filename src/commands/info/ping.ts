@@ -1,5 +1,5 @@
 import { CommandInteraction } from "@biscuitland/core";
-import { Command } from "../../utils/interfaces";
+import { Command } from "../../utils/interfaces.js";
 
 const data = {
     name: 'ping',

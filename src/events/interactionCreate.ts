@@ -2,7 +2,7 @@ import { AllEvents, Interaction } from "@biscuitland/core";
 import { commandList } from "../utils/commandList.js";
 import { Event, WhenType } from "../utils/interfaces.js";
 
-export default class implements Event {
+export class InteractionCreateEvent implements Event {
   name: AllEvents = "interactionCreate";
   when: WhenType = "on";
 
