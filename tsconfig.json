@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-
     "target": "es2021",
     "module": "es2022",
     "rootDir": "./src",
@@ -16,7 +15,6 @@
     "sourceMap": false,
     "strict": true,
     
-
     /* Type Checking */
     "skipLibCheck": true,
 		"noImplicitAny": true,
