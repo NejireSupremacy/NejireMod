@@ -1,9 +1,8 @@
 import { Session } from "@biscuitland/core";
 import { GatewayIntents } from "@biscuitland/api-types";
 
-import "dotenv/config";
 import { eventsListener } from "./loadHandlers";
-import { deployCommands } from "./deployCommands";
+import "dotenv/config";
 
 const intents = GatewayIntents.Guilds;
 
@@ -13,7 +12,6 @@ const session = new Session({
 });
 
 const boot = async () => {
-  await deployCommands(session);
   eventsListener(session);
   session.start();
 };
