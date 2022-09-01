@@ -8,11 +8,14 @@ export class ReadyEvent implements Event {
     name: AllEvents = 'ready';
     when: WhenType = 'once';
 
+    // TODO: Change ready event
     async execute(client: Ready) {
         console.log(`Logged in as ${client.user.username}`);
 
-        const shardsC = session.ws.agent.shards.values();
-        for (const { id } of shardsC) {
+        const shardsC = session.ws.shards.values();
+        for (const { options } of shardsC) {
+            const { id } = options;
+
             session.editStatus(id, {
                 activities: [{
                     name: 'a free spirit',

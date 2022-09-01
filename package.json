@@ -8,12 +8,13 @@
   },
   "type": "module",
   "dependencies": {
-    "@biscuitland/core": "^2.0.4",
+    "@biscuitland/core": "^2.0.5",
     "dotenv": "^16.0.1",
     "tsc-watch": "^5.0.3"
   },
   "devDependencies": {
     "@types/node": "^18.7.13",
+    "@types/ws": "^8.5.3",
     "@typescript-eslint/eslint-plugin": "^5.36.0",
     "@typescript-eslint/parser": "^5.36.0",
     "eslint": "^8.23.0"

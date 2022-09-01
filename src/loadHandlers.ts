@@ -1,4 +1,5 @@
 import { EventAdapter } from '@biscuitland/core';
+
 import { InteractionCreateEvent } from './events/interactionCreate.js';
 import { ReadyEvent } from './events/ready.js';
 import { Event } from './utils/interfaces';
