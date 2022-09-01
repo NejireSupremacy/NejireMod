@@ -9,8 +9,12 @@ export class InteractionCreateEvent implements Event {
 
     async execute(interaction: Interaction) {
         if (interaction.isCommand()) {
-            const { commandName } = interaction;
-            const { execute, needEphemeral } = commandList[commandName];
+            const { options } = interaction;
+            const subCommand = options.getSubCommand(true)[0];
+
+            if (subCommand === undefined) return;
+            
+            const { execute, needEphemeral } = commandList[subCommand];
 
             // TODO: Change this method to a defer when the ephemeral flag is available
             if (needEphemeral) await interaction.respond(

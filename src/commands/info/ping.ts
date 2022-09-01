@@ -2,8 +2,15 @@ import { CommandInteraction } from '@biscuitland/core';
 import { Command } from '../../utils/interfaces.js';
 
 const data = {
-    name: 'ping',
-    description: 'Get the bot latency'
+    name: 'information',
+    description: 'Get information about NejireBot',
+    options: [
+        {
+            type: 1,
+            name: 'ping',
+            description: 'Get the bot latency'
+        }
+    ]
 };
 
 export class PingCommand implements Command {
