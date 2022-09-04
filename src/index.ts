@@ -6,7 +6,9 @@ import { GatewayIntents } from '@biscuitland/api-types';
 
 import { eventsListener } from './loadHandlers.js';
 
-const intents = GatewayIntents.Guilds;
+const intents = GatewayIntents.Guilds |
+                GatewayIntents.GuildMessages |
+                GatewayIntents.MessageContent;
 const textDecoder = new TextDecoder();
 
 export const session = new Session({

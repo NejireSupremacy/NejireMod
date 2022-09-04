@@ -47,7 +47,6 @@ const boostrap = async () => {
         gateway: gwy,
 
         handleDiscordPayload: (shard, data) => {
-
             if (ws && ws.readyState === WebSocket.OPEN) {
                 ws.send(JSON.stringify({ id: shard.options.id, payload: data }));
             }

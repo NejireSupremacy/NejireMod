@@ -1,5 +1,5 @@
 import { CommandInteraction } from '@biscuitland/core';
-import { Command } from '../../utils/interfaces.js';
+import { InteractionCommand } from '../../utils/interfaces.js';
 
 const data = {
     name: 'information',
@@ -13,7 +13,7 @@ const data = {
     ]
 };
 
-export class PingCommand implements Command {
+export class PingCommand implements InteractionCommand {
     data = data;
     needEphemeral = false;
     async execute(interaction: CommandInteraction) {
