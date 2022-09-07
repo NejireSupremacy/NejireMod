@@ -5,7 +5,7 @@ import { setGuild } from './setGuild.js';
 import { setMember } from './setMember.js';
 import { setRoles } from './setRoles.js';
 
-export const initilize = async (interaction: CommandInteraction) => {
+export const initialize = async (interaction: CommandInteraction) => {
     const { guildId, member } = interaction;
     const { cache } = session;
 

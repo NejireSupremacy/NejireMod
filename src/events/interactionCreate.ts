@@ -3,7 +3,7 @@ import { InteractionResponseTypes } from '@biscuitland/api-types';
 
 import { commandList } from '../utils/commandList.js';
 import { Event, WhenType } from '../utils/Interfaces/event.js';
-import { initilize } from '../utils/Cache/initilize.js';
+import { initialize } from '../utils/Cache/initialize.js';
 
 export class InteractionCreateEvent implements Event {
     name: AllEvents = 'interactionCreate';
@@ -11,7 +11,7 @@ export class InteractionCreateEvent implements Event {
 
     async execute(interaction: Interaction) {
         if (interaction.isCommand()) {
-            initilize(interaction);
+            initialize(interaction);
             
             const { options } = interaction;
             const subCommand = options.getSubCommand(true)[0];
