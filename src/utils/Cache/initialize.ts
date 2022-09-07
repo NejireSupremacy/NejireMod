@@ -12,12 +12,11 @@ export const initialize = async (interaction: CommandInteraction) => {
     if (!guildId || !member) return;
 
     if (!(await cache.guilds.get(guildId))) {
-        await setGuild(guildId).catch();
+        setGuild(guildId);
         setRoles(guildId);
     }
 
     if (!(await cache.members.get(member?.id, guildId))) {
         setMember(member?.id, guildId);
-        console.log(member?.id, guildId);
     }
 };

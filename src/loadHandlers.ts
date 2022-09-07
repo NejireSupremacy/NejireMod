@@ -15,7 +15,6 @@ export const eventsListener = ({ events }: { events: EventAdapter }) => {
     for (const event of Object.values(eventList)) {
         const { name, when, execute } = event;
 
-        console.log(name);
         events[when](name, (...args: any[]) => execute(...args));
     }
 };
