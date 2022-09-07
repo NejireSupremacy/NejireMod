@@ -1,5 +1,5 @@
 import { CommandInteraction } from '@biscuitland/core';
-import { InteractionCommand } from '../../utils/interfaces.js';
+import { InteractionCommand } from '../../utils/Interfaces/commands.js';
 
 const data = {
     name: 'information',

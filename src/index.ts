@@ -1,20 +1,14 @@
 import 'dotenv/config';
 
-import { Session, Actions} from '@biscuitland/core';
+import { Actions} from '@biscuitland/core';
 import { WebSocketServer } from 'ws';
-import { GatewayIntents } from '@biscuitland/api-types';
 
 import { eventsListener } from './loadHandlers.js';
+import { ClientSession } from './Classes/ClientSession.js';
 
-const intents = GatewayIntents.Guilds |
-                GatewayIntents.GuildMessages |
-                GatewayIntents.MessageContent;
 const textDecoder = new TextDecoder();
 
-export const session = new Session({
-    token: process.env.DISCORD_AUTH_TOKEN,
-    intents: intents,
-});
+export const session = new ClientSession();
 
 const app = new WebSocketServer({ port: process.env.WS_PORT });
 

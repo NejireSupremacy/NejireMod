@@ -1,6 +1,6 @@
 import { AllEvents, Ready } from '@biscuitland/core';
 import { session } from '../index.js';
-import { Event, WhenType } from '../utils/interfaces.js';
+import { Event, WhenType } from '../utils/Interfaces/event.js';
 
 import { ActivityTypes } from '@biscuitland/api-types';
 

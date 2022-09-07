@@ -1,5 +1,5 @@
 import { Message } from '@biscuitland/core';
-import { TextCommand } from '../../utils/interfaces.js';
+import { TextCommand } from '../../utils/Interfaces/commands.js';
 
 export class EvalCommand implements TextCommand {
     name = 'eval';

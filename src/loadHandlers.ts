@@ -3,7 +3,7 @@ import { EventAdapter } from '@biscuitland/core';
 import { InteractionCreateEvent } from './events/interactionCreate.js';
 import { MessageCreateEvent } from './events/messageCreate.js';
 import { ReadyEvent } from './events/ready.js';
-import { Event } from './utils/interfaces';
+import { Event } from './utils/Interfaces/event.js';
 
 const eventList: Record<string, Event> = {
     ready: new ReadyEvent,

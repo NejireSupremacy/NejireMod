@@ -1,4 +1,4 @@
-import { AllEvents, CreateApplicationCommands } from '@biscuitland/core';
+import { CreateApplicationCommands } from '@biscuitland/core';
 
 export interface InteractionCommand {
     data: CreateApplicationCommands;
@@ -10,11 +10,3 @@ export interface TextCommand {
     name: string,
     execute(...args: any[]): Promise<void>;
 }
-
-export interface Event {
-    name: AllEvents;
-    when: WhenType;
-    execute(...args: any[]): Promise<void>;
-}
-
-export type WhenType = 'on' | 'once';

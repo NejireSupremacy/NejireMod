@@ -1,6 +1,6 @@
 import { AllEvents, Message } from '@biscuitland/core';
 import { devCommands } from '../utils/commandList.js';
-import { Event, WhenType } from '../utils/interfaces.js';
+import { Event, WhenType } from '../utils/Interfaces/event.js';
 
 export class MessageCreateEvent implements Event {
     name: AllEvents = 'messageCreate';
