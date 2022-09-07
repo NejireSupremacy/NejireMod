@@ -3,8 +3,7 @@ import { Session } from '@biscuitland/core';
 import { Cache } from '@biscuitland/cache';
 
 const intents = GatewayIntents.Guilds |
-                GatewayIntents.GuildMessages |
-                GatewayIntents.MessageContent;
+                GatewayIntents.GuildMessages;
 
 export class ClientSession extends Session {
     cache = new Cache();
