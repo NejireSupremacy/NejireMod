@@ -16,16 +16,17 @@ const data = {
 
 export class PingCommand implements InteractionCommand {
     data = data;
-    needEphemeral = false;
     async execute(interaction: CommandInteraction) {
-        const response = await interaction.sendFollowUp({ content: '🏓 Pong!' });
+        await interaction.respondWith({ content: '🏓 Pong!' });
+        const startTime = Date.now();
+        const response = await interaction.fetchFollowUp('@original');
 
-        const startTime = interaction.createdTimestamp;
-        const endTime = response.createdTimestamp;
+        
+        const endTime = Date.now();
 
         const msgLatency = endTime - startTime;
 
-        await response.edit({
+        await response?.edit({
             content: `🏓 Pong! \n> **My message latency is ${msgLatency} ms**`
         });
     }

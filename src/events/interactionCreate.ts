@@ -18,13 +18,13 @@ export class InteractionCreateEvent implements Event {
 
             if (subCommand === undefined) return;
             
-            const { execute, needEphemeral } = commandList[subCommand];
+            const { execute, needEphemeral, defer } = commandList[subCommand];
 
             // TODO: Change this method to a defer when the ephemeral flag is available
             if (needEphemeral) await interaction.respond(
                 { type: InteractionResponseTypes.DeferredUpdateMessage, data: { flags: MessageFlags.Ephemeral } }
             );
-            else await interaction.defer();
+            if (defer) await interaction.defer();
 
             try {
                 await execute(interaction);

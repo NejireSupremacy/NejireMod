@@ -9,7 +9,7 @@
   "type": "module",
   "dependencies": {
     "@biscuitland/cache": "^2.0.6",
-    "@biscuitland/core": "^2.0.5",
+    "@biscuitland/core": "^2.0.6",
     "dotenv": "^16.0.1",
     "tsc-watch": "^5.0.3"
   },
