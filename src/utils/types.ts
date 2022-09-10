@@ -5,6 +5,7 @@ declare global {
             DISCORD_APLICATION_ID: string;
             WS_URL: string;
             WS_PORT: number;
+            HTTP_PORT: number;
         }
     }
 }

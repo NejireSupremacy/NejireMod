@@ -1,7 +1,8 @@
 import 'dotenv/config';
 import WebSocket from 'ws';
+import http from 'http';
 
-import { GatewayIntents } from '@biscuitland/api-types';
+import { GatewayIntents, GatewayOpcodes, ActivityTypes } from '@biscuitland/api-types';
 import { DefaultRestAdapter } from '@biscuitland/rest';
 import { ShardManager } from '@biscuitland/ws';
 
@@ -30,19 +31,13 @@ const ask = () => {
 ask();
 
 const boostrap = async () => {
-
     const gwy = await rest.get<DiscordGetGatewayBot>('/gateway/bot');
 
     const sck = new ShardManager({
         config: {
             token: process.env.DISCORD_AUTH_TOKEN,
             intents: GatewayIntents.Guilds | GatewayIntents.GuildMessages,
-		
-        },
-        workers: {
-            shards: 1,
-            amount: 1,
-            delay: 5000
+
         },
         gateway: gwy,
 
@@ -52,6 +47,26 @@ const boostrap = async () => {
             }
         },
     });
+
+    http.createServer((_, res) => {
+        for (const shard of sck.shards.values()) {
+            shard.send({
+                op: GatewayOpcodes.PresenceUpdate,
+                d: {
+                    status: 'online',
+                    afk: false,
+                    since: null,
+                    activities: [{
+                        name: 'Just a free spirit',
+                        type: ActivityTypes.Watching,
+                        createdAt: Date.now()
+                    }]
+                }
+            });
+        }
+        res.writeHead(200);
+        res.end();
+    }).listen(process.env.HTTP_PORT);
 
     await sck.spawns();
 };
