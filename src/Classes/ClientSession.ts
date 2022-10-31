@@ -1,12 +1,19 @@
 import { GatewayIntents } from '@biscuitland/api-types';
 import { Session } from '@biscuitland/core';
-import { Cache } from '@biscuitland/cache';
+
+import { GuildsCache } from './Cache/GuildsCache.js';
+import { MembersCache } from './Cache/MembersCache.js';
+import { RolesCache } from './Cache/RolesCache.js';
 
 const intents = GatewayIntents.Guilds |
                 GatewayIntents.GuildMessages;
 
 export class ClientSession extends Session {
-    cache = new Cache();
+    cache = {
+        guilds: new GuildsCache(),
+        roles: new RolesCache(),
+        members: new MembersCache()
+    };
 
     constructor() {
         super({

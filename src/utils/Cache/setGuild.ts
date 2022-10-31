@@ -1,8 +1,15 @@
-import { Guild } from '@biscuitland/core';
+import { DiscordGuild } from '@biscuitland/api-types';
+
 import { session } from '../../index.js';
+import { guildsCacheStructure } from '../Interfaces/cacheStructures.js';
 
 export const setGuild = async (guildId: string) => {
-    const guild: Guild = await session.rest.get(`/guilds/${guildId}`);
+    const guild: DiscordGuild = await session.rest.get(`/guilds/${guildId}`);
 
-    session.cache.guilds.set(guildId, guild);
+    const guildObject: guildsCacheStructure = {
+        guildId,
+        guild
+    };
+
+    session.cache.guilds.set(guildId, guildObject);
 };

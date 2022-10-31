@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es2021",
-    "module": "es2022",
+    "target": "EsNext",
+    "module": "EsNext",
     "rootDir": "./src",
     "outDir": "./out",
 
@@ -10,7 +10,7 @@
 
     "declaration": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": false,
     
     "sourceMap": false,
     "strict": true,
@@ -18,7 +18,6 @@
     /* Type Checking */
     "skipLibCheck": true,
 		"noImplicitAny": true,
-		"strictNullChecks": true,
 		"strictFunctionTypes": true,
 		"noImplicitThis": true,
 		"noUnusedLocals": true,
